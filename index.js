@@ -1,7 +1,7 @@
 require('dotenv');
 const express = require('express');
 const app = express()
-const port = 5000 || process.env.PORT;
+const PORT = process.env.PORT || 5000;
 const usersRoute = require('./routes/users');
 
 app.get('/', (req, res) => {
@@ -10,6 +10,6 @@ app.get('/', (req, res) => {
 
 app.use('/api/users' ,usersRoute);
 
-app.listen(port, () => {
+app.listen(PORT, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
